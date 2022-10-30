@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<style>
+    fieldset{
+        background-color:rgb(45, 176, 227);
+        text-decoration-color: white;
+    }
+    input{
+        margin-bottom:10px;
+    }
+    
+</style>
+<body>
+
+    <fieldset style="width:auto; margin-inline:45%;" >
+
+    <legend style="text-align:center ;"><h1 style="margin-top:55px ;">Welcome</h1></legend>
+    <legend style="text-align:center;"><h1>Sign in</h1></legend>
+        <form action="" method="post">
+        {% csrf_token %}
+
+        <label for="">Email:</label>
+        <input type="text" placeholder="Email" name="email">
+
+        <label for="">Fullname:</label>
+        <input type="text" placeholder="fullname" name="fullname">
+
+        <label for="">Username:</label>
+        <input type="text" placeholder="username" name="username">
+
+        <label for="">Branch:</label>
+        <input type="text" placeholder="enter your field" name="branch">
+
+        <label for="">Password:</label>
+        <input type="text" placeholder="Password" name="password">
+
+        <label for="">Confirmation:</label>
+        <input type="text" placeholder="Are you want to sign in(y/n)?" name="confirmation">
+
+        <input type="submit" value="save">
+
+    </form>
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Info</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+        }
+        input{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<tbody >
+    <fieldset style="width:fit-content; margin-inline:45%;">
+    <legend><h1>Add Information</h1>></legend>
+        <form  action="" method="post">
+        {% csrf_token %}
+        <label for="">Name:</label>
+        <input type="name" name="name">
+
+        <label for="">Branch:</label>
+        <input type="branch" name="branch">
+
+        <label for="">Language:</label>
+        <input type="language" name="language">
+
+        <label for="">Field:</label>
+        <input type="field" name="field">
+
+        <label for="">Technical_language:</label>
+        <input type="technical_language" name="technical_language">
+
+        <input type="submit" value="save">
+    </form>
+</fieldset>
+</tbody>
+    <table align="center">
+        <thead>
+
+            <tr>
+                <h1 style="text-align:center">Show Information</h1>
+                <td>Index</td>
+                <td>Name</td>
+                <td>Branch</td>
+                <td>Language</td>
+                <td>Field</td>
+                <td>Technical_language</td>
+                <td>Action</td>
+                <td>Remove</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in all_add  %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.branch}}</td>
+                <td>{{i.language}}</td>
+                <td>{{i.field}}</td>
+                <td>{{i.technical_language}}</td>
+                <td><a href="{% url 'edit' i.id %}">Edit</a></td>
+                <td><a href="{% url 'delete' i.id %}">Delete</a></td>
+
+
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>
